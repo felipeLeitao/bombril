@@ -1,0 +1,73 @@
+﻿@model Bombril.DataSul.UI.WEB.Models.PlanilhaMOD
+
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<link href="//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="https://www.base64-image.de/vendor/font-aweseome/css/font-awesome.min.css" />
+<link href="~/Content/main.css" rel="stylesheet" />
+
+@using (Html.BeginForm("Cadastrar", "DataSul", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div id="drag-area">
+        <div class="container">
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                <img id="mr-base64" src="https://www.base64-image.de/build/img/mr-base64-482fa1f767.png" alt="Mr. Base" width="266" height="358">
+            </div><!-- /col -->
+            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                <h2 id="drag-box-title">
+                    Importe sua planilha<br>
+                </h2>
+
+                @* SÓ APARECE EM TELA GRANDE *@
+
+                <div id="drag-target-box" class="row dz-clickable ">
+                    <div id="drag-target" class="col-lg-8 col-md-8 col-sm-8 col-xs-8 ">Solte em algum lugar</div><!-- /#drag-target -->
+
+                    <div id="click-target" class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        ou clique
+                    </div><!-- /#file-button -->
+
+                </div><!-- /#drag-target-box -->
+                @* SÒ APARECE PARA TELA PEQUENA E MOBILE *@
+
+                <div id="mobile-form">
+                    <div class="input-frame">
+                        <button type="button" class="btn btn-default input-replace" style="display: block;">Selecione um Arquivo</button>
+                        @Html.TextBoxFor(x => x.File, new { id = "file", style = "opacity:0;", type = "file" })
+
+
+                    </div><br>
+
+
+                </div>
+
+                <img id="convert-arrow" src="https://www.base64-image.de/build/img/long-arrow-right-08ced20507.png" alt="" width="164" height="74">
+            </div><!-- /col -->
+        </div>
+
+        <br />
+
+        <div class="">
+            <div class="col-lg-offset-1">
+                <button type="submit" class="btn btn-success col-lg-11">Enviar</button>
+            </div>
+        </div>
+
+
+    </div>
+}
+
+@section SCRIPTS {
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+    <script src="~/Scripts/dropzone.js"></script>
+
+    <script src="~/Scripts/upload.js"></script>
+}

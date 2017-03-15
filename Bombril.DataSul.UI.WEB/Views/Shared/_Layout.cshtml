@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+
+</head>
+<body>
+
+    <div id="header">
+        <div class="container">
+            <div class="row no-gutter">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    <h1 id="header-logo">
+                        <a id="header-logo-img" href="/">
+                            <img src="http://rsrc.1001cupomdedescontos.com.br/brands/1utp9yz1njy8404g4g.jpg" alt="Base64 Image Encoder" width="126" height="44">
+                        </a>
+                    </h1>
+                </div>
+                <!-- /col -->
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                    <!-- navigation: mobile -->
+                    <a id="menu-button-mobile" class="fa fa-bars pull-right" href="javascript:base64Global.prototype.toggleMobileMenu();"></a>
+
+                    <!-- navigation: desktop + tablet -->
+                    <ul id="menu" class="pull-right">
+                        <li class="menu-item  menu-item-current ">
+                            <a href="https://www.base64-image.de">
+                                Home
+                            </a>
+                        </li>
+                        <li class="menu-item ">
+                            <a href="https://www.base64-image.de/tutorial">
+                                Tutorial
+                            </a>
+                        </li>
+                        <li class="menu-item ">
+                            <a href="https://www.base64-image.de/faq">
+                                FAQ
+                            </a>
+                        </li>
+                        <li class="menu-item ">
+                            <a href="https://www.base64-image.de/contact/send">
+                                Contato
+                            </a>
+                        </li>
+
+                    </ul>
+                </div><!-- /col -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+    </div>
+
+    <div>
+        @RenderBody()
+    </div>
+
+    @RenderSection("SCRIPTS")
+
+</body>
+</html>
